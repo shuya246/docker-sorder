@@ -1,0 +1,1 @@
+2020/06/15 17:07:58 [warn] 6#6: *36 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/1/00/0000000001 while reading upstream, client: 172.25.0.1, server: , request: "GET /history HTTP/1.1", upstream: "fastcgi://172.25.0.2:9000", host: "127.0.0.1:10080", referrer: "http://127.0.0.1:10080/"

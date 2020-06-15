@@ -16,6 +16,9 @@ class AddLoginidUserTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->string('login_id');
+            $table->integer('store_id');
+            $table->integer('role_id');
+            $table->softDeletes();
         });
     }
 

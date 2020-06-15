@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'OrderController@index')->name('index');
+Route::get('/history', 'OrderController@history')->name('history');
+
+Route::get('/employee', 'UserController@index')->name('userindex');
 
 Auth::routes();
 
