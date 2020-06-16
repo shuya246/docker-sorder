@@ -2,6 +2,7 @@
     <!-- Content Wrapper. Contains page content -->
     @section('container')
     <!-- Content Header (Page header) -->
+  <div class="content-wrapper">
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -9,7 +10,7 @@
             <h1>従業員管理</h1>
           </div>
           <div class="col-sm-6 text-right">
-            <a href="user-add.html" class="btn btn-primary">従業員追加</a>
+            <a href="{{route('user_create')}}" class="btn btn-primary">従業員追加</a>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -216,4 +217,5 @@
       </div>
       <!-- /.modal-dialog -->
     </div>
+  </div>
     @endsection

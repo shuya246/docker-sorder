@@ -2,6 +2,7 @@
 
     <!-- Content Wrapper. Contains page content -->
     @section('container')
+  <div class="content-wrapper">
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -288,5 +289,6 @@
       <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+  </div>
     @endsection
       <!-- Content Header (Page header) -->

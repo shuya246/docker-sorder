@@ -2,6 +2,7 @@
   <!-- Content Wrapper. Contains page content -->
   @section('container')
   <!-- Content Header (Page header) -->
+<div class="content-wrapper">
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
@@ -25,7 +26,7 @@
 
             </div>
             <!-- form start -->
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="ordercontroller@store" method="POST">
               <div class="card-body">
                 <div class="form-group row">
                   <label for="store_id" class="col-sm-4 col-form-label text-right">店番</label>
@@ -77,15 +78,15 @@
                    </div>
                 </div>
                 <div class="form-group row">
-                  <label for="note" class="col-sm-4 col-form-label text-right">備考</label>
+                  <label for="memo" class="col-sm-4 col-form-label text-right">備考</label>
                   <div class="col-sm-8">
-                    <textarea class="form-control" id="note" name="note" placeholder="" ></textarea>
+                    <textarea class="form-control" id="memo" name="memo" placeholder="" ></textarea>
                   </div>
                 </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">送信</button>
+                <button type="submit" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">送信</button>
               </div>
               <!-- /.card-footer -->
             </form>
@@ -138,6 +139,7 @@
     <!-- /.modal -->
   </section>
   <!-- /.content -->
+</div>
 </div>
 <!-- /.content-wrapper -->
   @endsection

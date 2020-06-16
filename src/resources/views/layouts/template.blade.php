@@ -73,14 +73,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="store.html" class="nav-link">
+            <a href="{{route('storeindex')}}" class="nav-link">
               <i class="nav-icon far fa-building"></i>
               <p>店舗管理</p>
             </a>
           </li>
           <li class="nav-header">受注</li>
           <li class="nav-item">
-            <a href="order.html" class="nav-link">
+            <a href="{{route('recieverindex')}}" class="nav-link">
               <i class="nav-icon far fa fa-sticky-note"></i>
               <p>受注管理</p>
             </a>

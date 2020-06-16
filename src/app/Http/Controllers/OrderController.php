@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Orders;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -34,9 +36,20 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Orders $orders)
     {
         //
+        $orders = new Orders();
+        $orders->store_id = $request->store_id;
+        $orders->user_id = Auth::id();
+        $orders->reciver_id = $request->reciever_id;
+        $orders->child_name = $request->child_name;
+        $orders->child_name_ruby = $request->child_name_ruby;
+        $orders->kind = $request->kind;
+        $orders->arrival_date = $request->arrival_date;
+        $orders->memo = $request->memo;
+        $orders->save();
+        return redirect('history');
     }
 
     /**
