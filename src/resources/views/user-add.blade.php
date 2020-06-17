@@ -26,7 +26,8 @@
               <h3 class="card-title">従業員</h3>
             </div>
             <!-- form start -->
-            <form class="form-horizontal">
+          <form class="form-horizontal" action="{{route('user_add')}}" method="POST">
+            @csrf
               <div class="card-body">
                 <div class="form-group row">
                   <label for="name" class="col-sm-4 col-form-label text-right">ログインID</label>
@@ -59,22 +60,20 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="kind" class="col-sm-4 col-form-label text-right">ロール</label>
+                  <label for="role_id" class="col-sm-4 col-form-label text-right">ロール</label>
                   <div class="col-sm-8">
-                      <select class="form-control" name="kind" id="kind">
+                      <select class="form-control" name="role_id" id="role_id">
+                        @foreach ($roles as $role)
                         <option></option>
-                        <option>一般</option>
-                        <option>名古屋営業部</option>
-                        <option>東京営業部</option>
-                        <option>大阪営業部</option>
-                        <option>管理者</option>
+                      <option value="{{$role->id}}">{{$role->role_name}}</option>
+                        @endforeach
                       </select>
                   </div>
                 </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">送信</button>
+                <button type="submit" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">送信</button>
               </div>
               <!-- /.card-footer -->
             </form>

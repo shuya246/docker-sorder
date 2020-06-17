@@ -40,6 +40,6 @@ class LoginController extends Controller
 
     public function username()
     {
-        return 'loign_id';
+        return 'login_id';
     }
 }

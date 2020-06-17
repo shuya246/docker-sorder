@@ -26,7 +26,7 @@
 
             </div>
             <!-- form start -->
-            <form class="form-horizontal" action="ordercontroller@store" method="POST">
+            <form class="form-horizontal" action="store" method="POST">
               <div class="card-body">
                 <div class="form-group row">
                   <label for="store_id" class="col-sm-4 col-form-label text-right">店番</label>

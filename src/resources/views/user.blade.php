@@ -80,16 +80,18 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($user as $item)
                   <tr>
-                    <td>248</td>
-                    <td>木曽路浜松柳通店</td>
-                    <td>大橋</td>
-                    <td>一般</td>
+                  <td>{{$item->store_id}}</td>
+                    <td>{{$item->store->store_name}}</td>
+                  <td>{{$item->name}}</td>
+                  <td>{{$item->role->role_name}}</td>
                     <td>
                       <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#modal-default">変更</button>
                       <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-danger">削除</button>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

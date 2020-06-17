@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Roles;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +18,8 @@ class UserController extends Controller
     public function index()
     {
         //
-        return view('user');
+        $user = User::all();
+        return view('user', compact('user'));
     }
 
     /**
@@ -25,11 +27,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Roles $roles)
     {
         //
+        $roles = Roles::all();
         $user = User::all();
-        return view('user-add', compact('user'));
+        return view('user-add', compact('user', 'roles'));
     }
 
     /**
@@ -41,15 +44,15 @@ class UserController extends Controller
     public function store(Request $request, User $user)
     {
         //
+        // dd($request);
         $user = new User();
         $user->login_id = $request->login_id;
         $user->password = Hash::make($request->password);
-        $user->store_num = $request->store_num;
-        $user->store_name = $request->store_name;
+        $user->store_id = $request->store_id;
         $user->name = $request->name;
         $user->role_id = $request->role_id;
         $user->save();
-        return redirect('userindex');
+        return redirect('/employee');
     }
 
     /**
